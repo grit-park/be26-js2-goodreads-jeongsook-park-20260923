@@ -25,7 +25,8 @@ deleteButton.addEventListener("click", async () => {
         }
         console.log("Selected books deleted.");
         fetchAndRenderBooks();
-    } catch (error) {
+    } 
+    catch (error) {
         console.error("Error deleting book(s):", error);
     }
 });

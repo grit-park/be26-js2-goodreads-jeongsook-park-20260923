@@ -1,0 +1,19 @@
+{
+  "hosting": {
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "package-lock.json",
+      "package.json",
+      "**/.*",
+      "/dist/**",
+      "**/dist/**",
+      "/node_modules/**",
+      "**/node_modules/**"
+
+    ]
+  },
+  "database": {
+    "rules": "realtime database rules"
+  }
+}

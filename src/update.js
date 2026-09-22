@@ -8,6 +8,7 @@ const scoreInput = document.getElementById("update-score");
 const updateButton = document.getElementById("update-btn");
 const cancelUpdateBtn = document.getElementById("cancel-update-btn");
 
+// Function for controlling the state of the score input based on the isRead value
 function updateScoreState() {
     const isRead = isReadInput.value === "true";
     scoreInput.disabled = !isRead;
@@ -16,8 +17,10 @@ function updateScoreState() {
     }
 }
 
+//isReadInput change eventListener
 isReadInput.addEventListener("change", updateScoreState);
 
+//updateBtn listener whether checkbox is checked or not.
 updateButton.addEventListener("click", async () => {
     const checkedBook = document.querySelector(".book-checkbox:checked");
 
@@ -26,6 +29,13 @@ updateButton.addEventListener("click", async () => {
         return;
     }
 
+    //THe most challenging part  is to understand 
+    //how to get the book ID from the checked checkbox
+    // and get the book details from database.
+
+    // Get the book ID from the checked checkbox. 
+    // dataset.id is used to retrieve the data-id attribute value 
+    // from the checkbox element.
     const bookId = checkedBook.dataset.id;
 
     try {
@@ -50,25 +60,30 @@ updateButton.addEventListener("click", async () => {
     }
 });
 
-// PATCH: Update only reading status and score
+
+// ******************************************************** //
+// PATCH: Update only via isRead and score 
 updateForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const bookId = updateForm.dataset.id;
     if (!bookId) {
-        alert("No book selected.");
+        alert("No book selected. Please select a book");
         return;
     }
 
     const isRead = isReadInput.value === "true";
     const score = isRead ? Number(scoreInput.value) : 0;
 
+
+    //PATCH via SAVE button in in an update form
     const patchPayload = {
         isRead: isRead,
         score: score
     };
 
     try {
+        // PATCH: Update book via REST API
         const response = await fetch(`${BASE_URL}/${bookId}.json`, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
@@ -87,6 +102,8 @@ updateForm.addEventListener("submit", async (event) => {
     }
 });
 
+
+//eventListener for cancel button in an update form
 cancelUpdateBtn.addEventListener("click", () => {
     updateForm.reset();
     updateForm.classList.add("hidden");
