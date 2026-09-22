@@ -1,0 +1,315 @@
+.html {
+    font-family: "Arial", "sans-serif";
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    padding: 10px;
+    background-color: #f5ecd9;
+    color: #222;
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+.logo {
+    display: block;
+    max-width: 200px;
+    height: auto;
+    cursor: pointer;
+}
+
+header {
+    padding: 2px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header img {
+    max-width: 100%;
+    height: auto;
+}
+
+header p {
+    color: #403f3f;
+    text-align: center;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+main {
+    margin: 0 auto;
+    padding: 10px;
+    max-width: 800px;
+}
+
+section {
+    margin: 5px;
+}   
+
+
+/*****************************************************/
+/* CLASS = BOOK-GRID */
+
+.book-grid {
+    display: grid;
+    grid-template-columns: 40px 1.5fr 1.3fr 0.7fr 1fr;
+    width: 100%;
+    background-color: #efc56a;
+    border: 1px solid #f2dba9;
+    border-radius: 8px;
+}
+
+
+/* CLASS = BOOK-GRID-HEADER */
+.book-grid-header-checkbox,
+.book-grid-header {
+    padding: 5px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: #efc56a;
+    border: 1px solid #f2dba9;
+}
+
+
+
+/*****************************************************/
+/* CLASS and ID = BOOK-LIST */
+
+.book-list {
+    display: contents;
+}
+
+.grid-cell {
+    padding: 6px 6px;
+    display: flex;
+    align-items: center;
+
+    border: 1px solid #f2dba9;
+    background-color: #fffaf0;
+
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+
+/*****************************************************/
+/* CHECKBOX */
+.book-checkbox {
+    width: 26px;
+    height: 18px;
+    border: 1px solid #f2dba9;
+    accent-color: #f6f6f2;
+    cursor: pointer;
+}
+
+
+/*****************************************************/
+/* YES / NO */
+.read-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.read-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.yes-button.active {
+    background-color: #91ad78;
+    color: #1f2b18;
+}
+
+.no-button.active {
+    background-color: #c98272;
+    color: #3f1e19;
+}
+
+.read-btn:not(.active) {
+    background-color: #e8e1d4;
+    color: #9a9285;
+}
+
+
+/*****************************************************/
+/* STARS */
+
+.stars {
+    display: flex;
+    gap: 2px;
+}
+
+.star {
+    padding: 1px;
+    border: none;
+    background: transparent;
+    color: #c9bda7;
+    cursor: pointer;
+}
+
+.star.active {
+    color: #87a86d;
+}
+
+
+/*****************************************************/
+/* MAIN BUTTONS: UPDATE; DELETE; ADD */
+
+.main-buttons {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.main-buttons button {
+    min-width: 100px;
+    padding: 7px 14px;
+    background-color: #efc56a;
+    color: #2f2a24;
+    font-size: 1rem;
+    border: transparent;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.main-buttons button:hover {
+    background-color: #dfd1b5;
+}
+
+
+
+
+
+
+/*****************************************************/
+/* ADD / UPDATE FORM */
+
+.welcome-title {
+    font-size: 1.5rem;
+}
+
+.book-form {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fffaf0;
+    border: 1px solid #f2dba9;
+    border-radius: 8px;
+
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 10px;
+    align-items: center;
+}
+
+.book-form h2 {
+    grid-column: 1 / -1;
+    margin: 0 0 10px;
+}
+
+.book-form input,
+.book-form select {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #d7c7a4;
+    border-radius: 6px;
+}
+
+.form-buttons {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.form-buttons button {
+    padding: 7px 14px;
+    background-color: #efc56a;
+    color: #2f2a24;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*****************************************************/
+/* FOOTER */
+
+footer {
+    font-size: 0.775rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    margin-top: 20px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+    gap: 1ch;
+}
+
+
+footer a {
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 700px) {
+    .book-grid {
+        grid-template-columns: 36px 1.4fr 1.2fr 0.9fr 1fr;
+    }
+
+    .book-grid-header {
+        font-size: 1rem;
+    }
+
+    .grid-cell {
+        font-size: 0.95rem;
+    }
+
+    .book-form {
+        grid-template-columns: 1fr;
+    }
+
+    .book-form h2,
+    .form-buttons {
+        grid-column: 1;
+    }
+}
