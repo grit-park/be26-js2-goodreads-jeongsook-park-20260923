@@ -1,0 +1,11 @@
+.DS_Store
+
+node_modules/
+
+.history/
+.local-history/
+
+dist/
+
+.env
+.env.local
