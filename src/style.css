@@ -244,7 +244,7 @@ section {
 
 
 /******************************************************/
-/* BOOK FORM UPDATE */
+/* BOOK FORM UPDATE - buttons */
 #book-form-update .form-buttons button:first-child {
     background-color: #9bbd82;
 }
@@ -252,20 +252,6 @@ section {
 #cancel-update-button {
     background-color: #d08270;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
