@@ -30,18 +30,15 @@ form.addEventListener("submit", async (event) => {
 
         if (!response.ok) throw new Error("Failed to add book.");
 
-        console.log("Book successfully added.");
+        console.log("Book successfully added via POST REST API!");
         form.reset();
-
         updateScoreInput();
         form.classList.add("hidden");
-        
         fetchAndRenderBooks();
     } catch (error) {
         console.error("Error adding book:", error);
     }
 });
-
 
 addButton.addEventListener("click", () => {
     form.classList.remove("hidden");

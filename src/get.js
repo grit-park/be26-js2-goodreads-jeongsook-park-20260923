@@ -6,8 +6,6 @@ const isReadInput = document.getElementById("isRead");
 const scoreInput = document.getElementById("score");
 const bookList = document.getElementById("book-list");
 
-
-// ************************************************************ //
 // GET books from Realtime Database REST API
 export async function fetchAndRenderBooks() {
     try {
@@ -32,11 +30,9 @@ export async function fetchAndRenderBooks() {
             createBookRow(id, book);
         });
     } catch (error) {
-        console.error("Error from REST API:", error);
+        console.error("Error fetching books via REST API:", error);
     }
 }
-// ************************************************************ //
-
 
 function createBookRow(id, book) {
     // Checkbox

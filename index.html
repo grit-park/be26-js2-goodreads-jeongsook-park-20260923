@@ -1,49 +1,63 @@
 <!--@copyright: Grit Academy - BE26 J Park-->
 <!--@license: Creative Commons Attribution 4.0 International -->
 <!doctype html>
-<html lang="en">
+<html lang="sv">
 
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./src/style.css" />
   <link rel="stylesheet" href="./src/update.css" />
-  <title>BE26 Goodreads - Jeongsook Park</title>
+  <title>BE26-Goodreads-Jeongsook-Park</title>
 </head>
 
 <body>
+
   <a href="https://grit2026.web.app/" target="_blank" rel="noopener noreferrer" aria-label="Grit Academy">
-    <img src="/public/logo.svg" class="logo" alt="Grit Academy logo">
+    <img src="/public/logo.svg" class="logo" alt="logo">
   </a>
 
   <header>
-    <img src="/public/header-books.png" alt="Books" />
+    <img src="/public/header-books.png" alt="Header-Image" aria-label="Header Image" />
+
     <p class="welcome-title">Welcome to Your Book List</p>
+
     <p>
-      Your checklist of books you have read or have not read yet.
-      Add books, update reading status and score, or delete books.
+      Your checklist of books you have read or haven't read yet.
+      Update your reviews (1 bad - 5 excellent),
+      delete the books you have no longer interest in,
+      and add your new books you want to read.
     </p>
   </header>
 
   <main>
-    <section class="book-grid" aria-label="Book list">
-      <div class="book-grid-header-checkbox" aria-hidden="true"></div>
-      <div class="book-grid-header">Title</div>
-      <div class="book-grid-header">Author</div>
-      <div class="book-grid-header">Read</div>
-      <div class="book-grid-header">Score (0-5)</div>
+
+    <div class="book-grid">
+
+      <div class="book-grid-header-checkbox" aria-label="get all books"></div>
+      <div class="book-grid-header" aria-label="Title">Title</div>
+      <div class="book-grid-header" aria-label="Author">Author</div>
+      <div class="book-grid-header" aria-label="Is Read">isRead</div>
+      <div class="book-grid-header" aria-label="Score">Score (1-5)</div>
 
       <div class="book-list" id="book-list"></div>
-    </section>
 
-    <div class="main-buttons">
-      <button id="add-btn" type="button">Add</button>
-      <button id="update-btn" type="button">Update</button>
-      <button id="delete-btn" type="button">Delete</button>
     </div>
 
-    <!-- --------------Add form ------------------- -->
-    <form id="book-form" class="book-form hidden">
+    <div class="main-buttons">
+      <button id="add-btn" type="button" aria-label="Add a new book">Add</button>
+      <button id="update-btn" type="button" aria-label="Update a book">Update</button>
+      <button id="delete-btn" type="button" aria-label="Delete a book">Delete</button>
+
+    </div>
+
+
+
+    <!-- **************************************************-->
+    <!-- FORM: add a book -->
+    <form id="book-form" class="book-form hidden" data-mode="add">
+
       <h2>Add a new book</h2>
 
       <label for="title">Title:</label>
@@ -54,79 +68,87 @@
 
       <label for="isRead">Have you read it?</label>
       <select id="isRead">
-        <option value="false">No</option>
         <option value="true">Yes</option>
+        <option value="false">No</option>
       </select>
 
       <label for="score">Score:</label>
       <select id="score">
         <option value="0">0 - Not reviewed</option>
-        <option value="1">1 - Bad</option>
-        <option value="2">2 - Okay</option>
-        <option value="3">3 - Good</option>
-        <option value="4">4 - Very good</option>
-        <option value="5">5 - Excellent</option>
+        <option value="1">1 - bad</option>
+        <option value="2">2 - okay</option>
+        <option value="3">3 - good</option>
+        <option value="4">4 - very good</option>
+        <option value="5">5 - excellent</option>
       </select>
+      <label for="score" aria-label="for Score">Score (1-5):</label>
 
       <div class="form-buttons">
         <button type="submit">Save</button>
-        <button type="button" id="add-cancel-btn">Cancel</button>
+        <button type="button" id="cancel-btn">Cancel</button>
       </div>
     </form>
-    <!-- ------------------------------------------------ -->
+
+    <!-- **************************************************-->
+    <!-- Update form-->
+<form id="book-form-update" class="book-form hidden" data-mode="update">
+
+  <h2>Update book</h2>
+
+  <label for="update-title">Title:</label>
+  <input type="text" id="update-title" required>
+
+  <label for="update-author">Author:</label>
+  <input type="text" id="update-author" required>
+
+  <label for="update-isRead">Have you read it?</label>
+  <select id="update-isRead">
+    <option value="true">Yes</option>
+    <option value="false">No</option>
+  </select>
+
+  <label for="update-score">Score:</label>
+  <select id="update-score">
+    <option value="0">0 - Not reviewed</option>
+    <option value="1">1 - bad</option>
+    <option value="2">2 - okay</option>
+    <option value="3">3 - good</option>
+    <option value="4">4 - very good</option>
+    <option value="5">5 - excellent</option>
+  </select>
+
+  <div class="form-buttons">
+    <button type="submit">Save</button>
+    <button type="button" id="cancel-btn">Cancel</button>
+  </div>
+
+</form>
 
 
-
-    <!-- --------------Update form ------------------- -->
-    <form id="book-form-update" class="book-form hidden">
-      <h2>Update book</h2>
-
-      <label for="update-title">Title:</label>
-      <input type="text" id="update-title" readonly>
-
-      <label for="update-author">Author:</label>
-      <input type="text" id="update-author" readonly>
-
-      <label for="update-isRead">Have you read it?</label>
-      <select id="update-isRead">
-        <option value="false">No</option>
-        <option value="true">Yes</option>
-      </select>
-
-      <label for="update-score">Score:</label>
-      <select id="update-score">
-        <option value="0">0 - Not reviewed</option>
-        <option value="1">1 - Bad</option>
-        <option value="2">2 - Okay</option>
-        <option value="3">3 - Good</option>
-        <option value="4">4 - Very good</option>
-        <option value="5">5 - Excellent</option>
-      </select>
-
-      <div class="form-buttons">
-        <button type="submit">Save</button>
-        <button type="button" id="update-cancel-btn">Cancel</button>
-      </div>
-    </form>
-    <!-- ------------------------------------------------ -->
 
   </main>
 
 
+
   <footer>
-    <span aria-label="Copyright">© Copyright 2026:</span>
+    <p aria-label="Footer Information"></p>
+    <span aria-label="Copyright Information">©</span>Copyright 2026:</span>
     <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
       Creative Commons Attribution 4.0 International.
     </a>
+
     &nbsp;&nbsp;&nbsp;
+
     Please contact us for any questions or concerns.
     <a href="mailto:j.park@example.com">j.park@example.com</a>
+
   </footer>
 
-  <script src="./src/get.js" type="module"></script>
-  <script src="./src/put.js" type="module"></script>
-  <script src="./src/update.js" type="module"></script>
-  <script src="./src/delete.js" type="module"></script>
-</body>
+  <script src="src/get.js" type="module"></script>
+  <script src="src/put.js" type="module"></script>
+  <script src="src/update.js" type="module"></script>
+  <script src="src/delete.js" type="module"></script>
+
+
 
 </html>
