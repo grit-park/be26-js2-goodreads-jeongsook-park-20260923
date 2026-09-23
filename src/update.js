@@ -5,8 +5,9 @@ const titleInput = document.getElementById("update-title");
 const authorInput = document.getElementById("update-author");
 const isReadInput = document.getElementById("update-isRead");
 const scoreInput = document.getElementById("update-score");
+
 const updateButton = document.getElementById("update-btn");
-const cancelUpdateBtn = document.getElementById("cancel-update-btn");
+const cancelUpdateButton = document.getElementById("cancel-update-button");
 
 function updateScoreState() {
     const isRead = isReadInput.value === "true";
@@ -87,7 +88,8 @@ updateForm.addEventListener("submit", async (event) => {
     }
 });
 
-cancelUpdateBtn.addEventListener("click", () => {
+
+cancelUpdateButton.addEventListener("click", () => {
     updateForm.reset();
     updateForm.classList.add("hidden");
     delete updateForm.dataset.id;

@@ -202,7 +202,7 @@ section {
     border-radius: 8px;
 
     display: grid;
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 200px 1fr;
     gap: 10px;
     align-items: center;
 }
@@ -242,6 +242,16 @@ section {
 
 
 
+
+/******************************************************/
+/* BOOK FORM UPDATE */
+#book-form-update .form-buttons button:first-child {
+    background-color: #9bbd82;
+}
+
+#cancel-update-button {
+    background-color: #d08270;
+}
 
 
 
