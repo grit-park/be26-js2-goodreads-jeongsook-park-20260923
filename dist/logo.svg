@@ -1,0 +1,71 @@
+<svg viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="coverTop" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#32312f"/>
+      <stop offset="100%" stop-color="#171716"/>
+    </linearGradient>
+    <linearGradient id="coverSide" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1d1d1c"/>
+      <stop offset="100%" stop-color="#0d0d0d"/>
+    </linearGradient>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fffaf0"/>
+      <stop offset="50%" stop-color="#f7ead2"/>
+      <stop offset="100%" stop-color="#e6d3b3"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d49a5b"/>
+      <stop offset="100%" stop-color="#a76835"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="20" stdDeviation="24" flood-color="#6f5d46" flood-opacity=".22"/>
+    </filter>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#000" flood-opacity=".16"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="700" fill="#f5ecd9"/>
+  <ellipse cx="335" cy="516" rx="210" ry="54" fill="#c7b89f" opacity=".28"/>
+
+  <g transform="translate(110 118)" filter="url(#shadow)">
+    <g transform="translate(0 175)">
+      <polygon points="70,90 330,30 455,102 195,164" fill="url(#coverTop)"/>
+      <polygon points="195,164 455,102 455,148 195,210" fill="url(#coverSide)"/>
+      <polygon points="70,90 195,164 195,210 70,136" fill="#262523"/>
+      <polygon points="91,92 329,38 430,97 193,153" fill="url(#paper)"/>
+      <path d="M101 103 L329 51" stroke="#d8c39e" stroke-width="3" opacity=".8"/>
+      <path d="M117 114 L345 62" stroke="#d8c39e" stroke-width="2" opacity=".55"/>
+      <path d="M132 125 L360 73" stroke="#d8c39e" stroke-width="2" opacity=".4"/>
+    </g>
+
+    <g transform="translate(24 90)" filter="url(#softShadow)">
+      <polygon points="70,90 330,30 455,102 195,164" fill="url(#accent)"/>
+      <polygon points="195,164 455,102 455,148 195,210" fill="#8d552c"/>
+      <polygon points="70,90 195,164 195,210 70,136" fill="#bb7d44"/>
+      <polygon points="91,92 329,38 430,97 193,153" fill="url(#paper)"/>
+      <path d="M102 104 L331 52" stroke="#d9c6a6" stroke-width="3" opacity=".7"/>
+      <path d="M118 115 L346 63" stroke="#d9c6a6" stroke-width="2" opacity=".5"/>
+    </g>
+
+    <g transform="translate(52 0)" filter="url(#softShadow)">
+      <polygon points="70,90 330,30 455,102 195,164" fill="url(#coverTop)"/>
+      <polygon points="195,164 455,102 455,148 195,210" fill="url(#coverSide)"/>
+      <polygon points="70,90 195,164 195,210 70,136" fill="#282725"/>
+      <polygon points="351,66 383,84 357,150 341,125 317,140" fill="#d9a45e"/>
+      <text x="235" y="112" font-size="88" font-weight="800" text-anchor="middle"
+            fill="#f0dfbf" opacity=".9" transform="rotate(-13 235 112)">B</text>
+      <path d="M105 103 L185 150" stroke="#4e4b47" stroke-width="3" opacity=".9"/>
+    </g>
+  </g>
+
+  <g transform="translate(555 220)">
+    <text x="0" y="0" font-size="42" font-weight="700" letter-spacing="7" fill="#ad7742">J PARK</text>
+    <text x="0" y="104" font-size="118" font-weight="800" letter-spacing="-4" fill="#181817">Book</text>
+    <text x="309" y="104" font-size="118" font-weight="800" letter-spacing="-4" fill="#b6783f">List</text>
+    <rect x="3" y="141" width="500" height="4" rx="2" fill="#d9c8aa"/>
+    <text x="4" y="192" font-size="24" font-weight="500" letter-spacing="2.5" fill="#6f665a">
+      READ • TRACK • REMEMBER
+    </text>
+  </g>
+</svg>
